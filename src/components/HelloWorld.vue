@@ -1,6 +1,8 @@
 <template>
   <div>
-    Hi
+    <h1>KSite</h1>
+    <p>Response from api</p>
+    <p>{{ response }}</p>
   </div>
 </template>
 
@@ -17,7 +19,12 @@ export default {
       }
     })
 
-    console.log(await response.json())
+    this.response = (await response.json()).res
+  },
+  data () {
+    return {
+      response: ''
+    }
   }
 }
 </script>
