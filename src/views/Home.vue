@@ -1,13 +1,19 @@
 <template>
   <div class="home">
     <p class="title">Ksite</p>
-    <router-link to="/psy">Psyduck</router-link>
+    Hello! This is Kevin Wang's play ground. Enjoy yourself! <br />
+    <br />
+    Watch the <router-link to="/psy">Psyduck</router-link> swimming.
+    <div style="height: 10vh;"></div>
+    <SkatingCat />
   </div>
 </template>
 
 <style scoped>
 .home {
   padding: 20px;
+  background-color: #D7EDEE;
+  height: 100vh;
 }
 
 .title {
@@ -17,7 +23,12 @@
 </style>
 
 <script>
+import SkatingCat from '@/components/SkatingCat.vue'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    SkatingCat
+  }
 }
 </script>
