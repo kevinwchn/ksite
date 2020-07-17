@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <p class="title">Ksite</p>
-    Hello! This is Kevin Wang's play ground. Enjoy yourself! <br />
+    Hello! This is Kevin Wang's play ground.<br />
+    <Visitor />
     <br />
     Watch the <router-link to="/psy">Psyduck</router-link> swimming.
     <div style="height: 10vh;"></div>
@@ -24,11 +25,13 @@
 
 <script>
 import SkatingCat from '@/components/SkatingCat.vue'
+import Visitor from '@/components/Visitor.vue'
 
 export default {
   name: 'Home',
   components: {
-    SkatingCat
+    SkatingCat,
+    Visitor
   }
 }
 </script>
