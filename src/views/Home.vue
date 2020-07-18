@@ -1,11 +1,10 @@
 <template>
   <div class="home">
     <p class="title">Ksite</p>
-    Hello! This is Kevin Wang's play ground.<br />
+    Hello! This is Kevin Wang's playground. I love building <a href="https://vuejs.org/">Vue.js</a> and <a href="https://nodejs.org/en/">Node.js</a> apps.<br />
     <Visitor />
-    <br />
+    Watch <router-link to="/conan">柯南</router-link> on your TV. <br />
     Watch the <router-link to="/psy">Psyduck</router-link> swimming.
-    <div style="height: 10vh;"></div>
     <SkatingCat />
   </div>
 </template>

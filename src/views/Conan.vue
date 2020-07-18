@@ -3,6 +3,9 @@
     <input
       v-model="episodeId"
       placeholder="输入集数"
+      @keyup.enter="submit"
+      @blur="submit"
+      @keyup="checkAndSubmit"
       class="episode-input"
     >
     <button
@@ -15,13 +18,14 @@
 
 <style scoped>
 .episode-input {
-  font-size: 80px;
+  font-size: 50px;
+  height: 50vh;
   width: 100%;
 }
 
 .submit-btn {
   width: 100%;
-  height: 80px;
+  height: 50vh;
 }
 </style>
 
@@ -43,8 +47,15 @@ export default {
   },
   methods: {
     async submit () {
-      const response = await axios.get(`${process.env.VUE_APP_API_ENDPOINT}/episodes/conan/${this.episodeId}`)
-      window.location.href = this.classicBrowser ? response.data.classicUrl : response.data.newUrl;
+      if (this.episodeId) {
+        const response = await axios.get(`${process.env.VUE_APP_API_ENDPOINT}/episodes/conan/${this.episodeId}`)
+        window.location.href = this.classicBrowser ? response.data.classicUrl : response.data.newUrl  
+      }
+    },
+    async checkAndSubmit () {
+      if (this.episodeId.length === 3) {
+        await this.submit()
+      }
     }
   }
 }
